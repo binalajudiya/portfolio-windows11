@@ -1,10 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { wallpapers } from "../../assets";
+import initialState from "../initialState";
 
 export const desktopScreenSlice = createSlice ({
     name: "desktopScreen",
     initialState: {
-        wallpaper: wallpapers[0]
+        wallpaper: wallpapers[0],
+        pinApps: [...initialState.pinApps]
     },
     reducers: {
         setLockDScreenWallpaper: (state, action) => {
