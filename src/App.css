@@ -1242,6 +1242,11 @@ input:checked + .toggle-bg {
   margin-bottom: 1.5rem;
 }
 
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .-mb-px {
   margin-bottom: -1px;
 }
@@ -1461,6 +1466,10 @@ input:checked + .toggle-bg {
   height: 2.6em;
 }
 
+.h-\[91vh\] {
+  height: 91vh;
+}
+
 .w-10 {
   width: 2.5rem;
 }
@@ -1545,6 +1554,10 @@ input:checked + .toggle-bg {
 
 .w-\[2\.6em\] {
   width: 2.6em;
+}
+
+.w-\[95vw\] {
+  width: 95vw;
 }
 
 .max-w-2xl {
@@ -1698,6 +1711,10 @@ input:checked + .toggle-bg {
 
 .flex-wrap {
   flex-wrap: wrap;
+}
+
+.content-start {
+  align-content: flex-start;
 }
 
 .items-start {

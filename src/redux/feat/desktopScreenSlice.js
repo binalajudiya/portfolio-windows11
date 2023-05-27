@@ -6,7 +6,8 @@ export const desktopScreenSlice = createSlice ({
     name: "desktopScreen",
     initialState: {
         wallpaper: wallpapers[0],
-        pinApps: [...initialState.pinApps]
+        pinApps: [...initialState.pinApps],
+        shortcutApps: [...initialState.shortcutApps]
     },
     reducers: {
         setLockDScreenWallpaper: (state, action) => {
