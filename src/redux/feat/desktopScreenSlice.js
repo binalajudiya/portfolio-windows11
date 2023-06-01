@@ -41,11 +41,10 @@ export const desktopScreenSlice = createSlice ({
                 Component
             };
 
-            state.activeWindows.push(newWindow);
+            state.activeWindows.push(newWindow); 
         },
         maximizeActiveWindow: (state, action) => {
-            const { id } = action.payload;
-
+            const { id } = action.payload;  
         },
 
         cacnelMaximizedActiveWindow: (state, action) => {
