@@ -3,8 +3,14 @@ import { AiOutlineWifi } from "react-icons/ai";
 import { GiSpeaker } from "react-icons/gi";
 import TaskBarPinAppsButtons from "./TaskBarPinAppsButtons";
 import { useSelector } from "react-redux";
+import { useState } from "react";
+import moment from "moment";
+
 
 const TaskBar = () => {
+
+    const [date, setDay] = useState(moment().format("DD[/]MM[/]YYYY"));
+    const [time, setTime] = useState(moment().format("HH:MM"))
 
     const pinApps = useSelector((state) => state.desktopScreen.pinApps);
 
@@ -50,8 +56,8 @@ const TaskBar = () => {
                         <div className="flex m-[.1em] h-[2.4em] border-black rounded-md hover:bg-white hover:bg-opacity-10 hover:backdrop-blur-xl hover:backdrop-filter">
                             <div className="flex justify-center items-center px-2">
                                 <div className="flex flex-col items-end justify-center text-xs">
-                                    <span>9:36 PM</span>
-                                    <span> 5/25/2023</span>
+                                    <span>{time}</span>
+                                    <span>{date}</span>
                                 </div>
                             </div>
                         </div>

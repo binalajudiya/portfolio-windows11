@@ -8,7 +8,8 @@ export const desktopScreenSlice = createSlice ({
         wallpaper: wallpapers[0],
         activeWindows: [...initialState.activeWindows],
         pinApps: [...initialState.pinApps],
-        shortcutApps: [...initialState.shortcutApps]
+        shortcutApps: [...initialState.shortcutApps],
+        winModalToggled: false,
     },
     reducers: {
         setLockDScreenWallpaper: (state, action) => {
@@ -44,15 +45,33 @@ export const desktopScreenSlice = createSlice ({
             state.activeWindows.push(newWindow); 
         },
         maximizeActiveWindow: (state, action) => {
-            const { id } = action.payload;  
+            const { id } = action.payload; 
+            const filtered = state.activeWindows.map((win) => {
+                if (win.id === id) {
+                    win.maximized = !win.maximized;
+                }
+                return win;
+            });
+            state.activeWindows = filtered; 
         },
 
-        cacnelMaximizedActiveWindow: (state, action) => {
-            const id = action.payload;
+        cancelMaximizeActiveWindow: (state, action) => {
+            const { id } = action.payload;  
+            const filtered = state.activeWindows.map((win) => {
+                if (win.id === id) {
+                    win.maximized = false;
+                }
+                return win;
+            });
+            state.activeWindows = filtered;
+        },
+
+        minimizeActiveWindow: (state, action) => {
+            const { id, minimized } = action.payload;
 
             const filtered = state.activeWindows.map((win) => {
-                if(win.id ==- id){
-                    win.maximized = false;
+                if(win.id === id){
+                    win.minimized = minimized;
                 }
                 return win;
             })
@@ -60,9 +79,12 @@ export const desktopScreenSlice = createSlice ({
         },
         removeActiveWindow: (state, action) => {
 
-            const filtered = state.activeWindows.map((win) => win.id !== action.payload)
+            const filtered = state.activeWindows.filter((win) => win.id !== action.payload)
 
             state.activeWindows = filtered;
+        },
+        setWallpaperActive: (state, action) => {
+            state.wallpaper = action.payload
         }
     }
 })
@@ -71,7 +93,10 @@ export const {
     setLockDScreenWallpaper,
     newActiveWindow,
     removeActiveWindow,
-    cacnelMaximizedActiveWindow
+    minimizeActiveWindow,
+    maximizeActiveWindow,
+    cancelMaximizeActiveWindow,
+    setWallpaperActive
 } = desktopScreenSlice.actions;
 
 export default desktopScreenSlice.reducer;

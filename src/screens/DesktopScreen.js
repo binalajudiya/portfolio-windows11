@@ -14,7 +14,9 @@ const DesktopScreen = () => {
                 
                 {activeWindows.length > 0 && (
                     <>
-                    {activeWindows.map(
+                    {activeWindows
+                    .filter((win) => win.minimized === false)
+                    .map(
                     (
                         {
                             id,

@@ -1,6 +1,7 @@
 import { icons } from "../assets";
 import SettingsApp from "../components/SettingsApp";
 import { newActiveWindow } from "./feat/desktopScreenSlice";
+import { WIN_FEATURES } from "../const/winSize"
 
 const initialState = {
     activeWindows: [],
@@ -17,21 +18,24 @@ const initialState = {
             icon: icons.apps.chrome,
             width: 25,
             height: 25,
-            onClick: (e,dispatch) => {}
-        },
-        {
-            name: "WhatsApp",
-            icon: icons.apps.whatsapp,
-            width: 25,
-            height: 25,
-            onClick: (e,dispatch) => {}
+            onClick: () => {
+                window.open(
+                    "https://www.google.com/search?q=binalajudiya"
+                )
+            }
         },
         {
             name: "Visual Studio Code",
             icon: icons.apps.vscode,
             width: 25,
             height: 25,
-            onClick: (e,dispatch) => {}
+            onClick: () => {
+                window.open(
+                    "https://code.visualstudio.com/",
+                    "_blank",
+                    WIN_FEATURES
+                )
+            }
         },
         {
             name: "Settings",
@@ -60,35 +64,50 @@ const initialState = {
             icon: icons.apps.chrome,
             width: 35,
             height: 35,
-            onClick: (e,dispatch) => {}
+            onClick: () => {
+                window.open(
+                    "https://www.google.com/search?q=binalajudiya"
+                )
+            }
         },
         {
             name: "GitHub",
             icon: icons.apps.github,
             width: 35,
             height: 35,
-            onClick: (e,dispatch) => {}
+            onClick: () => {
+                window.open(
+                    "https://github.com/binalajudiya",
+                    "_blank",
+                    WIN_FEATURES
+                  );
+            }
         },
         {
             name: "LinkedIn",
             icon: icons.apps.linkedin,
             width: 35,
             height: 35,
-            onClick: (e,dispatch) => {}
+            onClick: () => {
+                window.open(
+                    "https://www.linkedin.com/in/binalajudiya/",
+                    "_blank",
+                    WIN_FEATURES
+                )
+            }
         },
         {
             name: "Visual Studio Code",
             icon: icons.apps.vscode,
             width: 35,
             height: 35,
-            onClick: (e,dispatch) => {}
-        },
-        {
-            name: "WhatsApp",
-            icon: icons.apps.whatsapp,
-            width: 35,
-            height: 35,
-            onClick: (e,dispatch) => {}
+            onClick: () => {
+                window.open(
+                    "https://code.visualstudio.com/",
+                    "_blank",
+                    WIN_FEATURES
+                )
+            }
         },
         {
             name: "Command Prompt",
@@ -109,7 +128,9 @@ const initialState = {
             icon: icons.apps.winMail,
             width: 35,
             height: 35,
-            onClick: (e,dispatch) => {}
+            onClick: () => {
+                window.location.href = "mailto:binalajudiya.ba@gmail.com"
+            }
         },
         {
             name: "Settings",
@@ -136,7 +157,13 @@ const initialState = {
             icon: icons.apps.github,
             width: 35,
             height: 35,
-            onClick: (e,dispatch) => {}
+            onClick: () => {
+                window.open(
+                    "https://github.com/binalajudiya",
+                    "_blank",
+                    WIN_FEATURES
+                  );
+            }
         }
     ]
 
