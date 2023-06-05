@@ -5,7 +5,7 @@ import initialState from "../initialState";
 export const desktopScreenSlice = createSlice ({
     name: "desktopScreen",
     initialState: {
-        wallpaper: wallpapers[0],
+        wallpaper: wallpapers[1],
         activeWindows: [...initialState.activeWindows],
         pinApps: [...initialState.pinApps],
         shortcutApps: [...initialState.shortcutApps],
